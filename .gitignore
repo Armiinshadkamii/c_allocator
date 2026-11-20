@@ -1,0 +1,20 @@
+
+# CLion
+.idea/
+
+# CMake generated files
+cmake-build-*/
+build/
+
+# Compiled executables
+shell
+main
+
+# Object files
+*.o
+
+# Libraries
+*.a
+*.so
+*.dll
+*.exe
