@@ -2,6 +2,7 @@
 
 #include <sys/mman.h>
 #include <stdint.h>
+#include <stdio.h>
 
 #define HEAP_SIZE (1024 * 1024)
 
@@ -164,4 +165,20 @@ void my_free(void *ptr) {
 
     block->is_free = 1;
     coalesce_blocks();
+}
+
+void print_heap(void) {
+    block_t *current = head;
+    int index = 0;
+
+    while (current != NULL) {
+        printf(
+            "Block %d | Size: %zu | Free: %s\n",
+            index++,
+            current->size,
+            current->is_free ? "Yes" : "No"
+        );
+
+        current = current->next;
+    }
 }

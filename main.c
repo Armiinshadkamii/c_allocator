@@ -16,6 +16,7 @@ int main(void) {
     char *a = my_malloc(100);
     char *b = my_malloc(200);
     char *c = my_malloc(300);
+    print_heap();
 
     if (!a || !b || !c) {
         printf("Allocation failed\n");
@@ -30,8 +31,10 @@ int main(void) {
 
     my_free(b);
     my_free(a);
+    print_heap();
 
     char *d = my_malloc(250);
+    print_heap();
 
     if (d) {
         printf("D: Allocation successful!\n");
